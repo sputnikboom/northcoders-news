@@ -1,32 +1,47 @@
 .App {
+  height: 100vh;
+  display: grid;
   text-align: center;
+  grid-template-rows: 2fr 1fr 10fr
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+header {
+  border: 2px solid rgba(255, 0, 0, 1);
+  background-color: rgba(255, 0, 0, 0.5)
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav {
+  border: 2px solid rgba(0, 255, 0, 1);
+  background-color: rgba(0, 255, 0, 0.5)
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  border: 2px solid rgba(0, 0, 255, 1);
+  background-color: rgba(0, 0, 255, 0.5)
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.article-card-container {
+  display:grid;
+  text-align: left;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-areas:
+  "vote-container title"
+  "vote-container article-card-details"
+  "vote-container article-interactions";
+  border: 2px dotted rgba(255, 255, 0, 1);
+  background-color: rgba(255, 255, 0, 0.5);
 }
+
+.article-card-details{
+  grid-area: article-card-details;
+}
+
+.vote-container {
+  grid-area: vote-container
+}
+
+.article-interactions {
+  grid-area: article-interactions
+}
+
