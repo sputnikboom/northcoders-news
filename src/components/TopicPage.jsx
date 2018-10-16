@@ -16,9 +16,20 @@ class TopicPage extends Component {
     }
 
     componentDidMount() {
-        getListById(this.props.topic_slug, "topics", "articles")
+        this.getArticles(this.props.topic_slug);
+    }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.topic_slug !== prevProps.topic_slug) {
+            this.getArticles(this.props.topic_slug);
+        }
+    }
+
+    getArticles = (topic) => {
+        getListById(topic, "topics", "articles")
         .then(articles => this.setState({ articles }), () => console.log(this.state.articles));
     }
+
 }
 
 TopicPage.propTypes = {
