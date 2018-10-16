@@ -1,6 +1,7 @@
 import React from "react";
 import VoteCount from "./VoteCount";
 import PropTypes from "prop-types";
+import {Link} from "@reach/router";
 
 const ArticleList = props => {
   return (
@@ -12,7 +13,7 @@ const ArticleList = props => {
             <h3>{article.title}</h3>
             <div className="article-card-details">
               <span>{article.created_at}</span>
-              <span>{article.created_by.username}</span>
+              <Link to={`/users/${article.created_by.username}`}>{article.created_by.username}</Link>
               <span>{article.belongs_to}</span>
             </div>
             <span className="article-interactions">{`${

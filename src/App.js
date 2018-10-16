@@ -27,7 +27,7 @@ class App extends Component {
           <span>Current Topic</span>
           <Link to="/">Home</Link>
           <Link to="/explore">Explore</Link>
-          <Link to="/users/123">My Profile</Link>
+          <Link to={`/users/${this.state.currentUser.username}`}>My Profile</Link>
         </nav>
 
         <Router>
@@ -38,7 +38,7 @@ class App extends Component {
             <TopicSearcher path="find-topic" />
             <TopicAdder path="add-topic" />
           </Explorer>
-          <UserProfile userId={this.state.currentUser.username} path="/users/123">
+          <UserProfile path="/users/:user_id">
             <CommentList path="comments" />
             <ArticleList path="articles" />
           </UserProfile>

@@ -10,12 +10,13 @@ class UserProfile extends Component {
   }
 
   render() {
+    const {user} = this.state;
     return (
       <div>
         <h2>User Profile</h2>
-        <div>{this.state.user.username}</div>
-        <div>{this.state.user.name}</div>
-        <img src={this.state.user.avatar_url} alt="avatar"/>
+        <div>{user.username}</div>
+        <div>{user.name}</div>
+        <img src={user.avatar_url} alt={`${user.username}'s avatar`}/>
 
         {/* <nav className="sub-nav">
           <Link to="./comments">Comments</Link>
@@ -27,7 +28,7 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    getOneById(this.props.userId, "user").then(user => {this.setState({ user })});
+    getOneById(this.props.user_id, "user").then(user => {this.setState({ user })});
   }
 
 }

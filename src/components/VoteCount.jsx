@@ -16,9 +16,7 @@ class VoteCount extends Component {
         </button>
         <p>{this.props.parent.votes + voteMod}</p>
         <button
-          onClick={() => this.changeVote("down")}
-          disabled={voteMod === -1}
-        >
+          onClick={() => this.changeVote("down")} disabled={voteMod === -1}>
           Down
         </button>
       </span>
