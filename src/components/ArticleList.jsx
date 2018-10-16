@@ -8,7 +8,7 @@ const ArticleList = props => {
       {props.articles.map(article => {
         return (
           <div key={article._id} className="article-card-container">
-            <VoteCount />
+            <VoteCount parent={article} type={"article"}/>
             <h3>{article.title}</h3>
             <div className="article-card-details">
               <span>{article.created_at}</span>
