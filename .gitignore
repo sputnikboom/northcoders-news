@@ -15,7 +15,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-project-checklist
+project-checklist.md
 
 npm-debug.log*
 yarn-debug.log*
