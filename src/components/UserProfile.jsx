@@ -14,6 +14,7 @@ class UserProfile extends Component {
           <Link to="./comments">Comments</Link>
           <Link to="./articles">Articles</Link>
         </nav>
+        {this.props.children}
       </div>
     );
   }

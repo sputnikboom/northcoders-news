@@ -2,46 +2,76 @@
   height: 100vh;
   display: grid;
   text-align: center;
-  grid-template-rows: 2fr 1fr 10fr
+  grid-template-rows: 2fr 1fr 10fr;
 }
 
 header {
   border: 2px solid rgba(255, 0, 0, 1);
-  background-color: rgba(255, 0, 0, 0.5)
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 nav {
   border: 2px solid rgba(0, 255, 0, 1);
-  background-color: rgba(0, 255, 0, 0.5)
+  background-color: rgba(0, 255, 0, 0.5);
 }
 
 main {
   border: 2px solid rgba(0, 0, 255, 1);
-  background-color: rgba(0, 0, 255, 0.5)
+  background-color: rgba(0, 0, 255, 0.5);
 }
 
 .article-card-container {
-  display:grid;
+  display: grid;
   text-align: left;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 6fr;
   grid-template-rows: 3fr 1fr 1fr;
   grid-template-areas:
-  "vote-container title"
-  "vote-container article-card-details"
-  "vote-container article-interactions";
+    "vote-container title"
+    "vote-container article-card-details"
+    "vote-container article-interactions";
   border: 2px dotted rgba(255, 255, 0, 1);
   background-color: rgba(255, 255, 0, 0.5);
 }
 
-.article-card-details{
+.article-card-details {
   grid-area: article-card-details;
 }
 
-.vote-container {
-  grid-area: vote-container
-}
-
 .article-interactions {
-  grid-area: article-interactions
+  grid-area: article-interactions;
 }
 
+.comment-list {
+  border: 2px dotted rgba(255, 255, 0, 1);
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.comment-container {
+  display: grid;
+  text-align: left;
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-rows: 1fr, 3fr;
+  grid-template-areas:
+  "vote-container comment-username comment-time"
+  "vote-container comment-body comment-body";
+  border: 2px dotted rgba(0, 255, 0, 1);
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.vote-container {
+  grid-area: vote-container;
+  border: 2px dotted rgba(255, 0, 0, 1);
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.username {
+  grid-area: username;
+}
+
+.username {
+  grid-area: comment-time;
+}
+
+.username {
+  grid-area: comment-body;
+}
