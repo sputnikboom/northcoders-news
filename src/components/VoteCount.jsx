@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { patchVote } from "./api/patch";
 
 class VoteCount extends Component {
   state = {
@@ -8,14 +9,18 @@ class VoteCount extends Component {
 
   render() {
     const { voteMod } = this.state;
-    console.log(this.props.parent);
     return (
       <span className="vote-container">
         <button onClick={() => this.changeVote("up")} disabled={voteMod === 1}>
           Up
         </button>
         <p>{this.props.parent.votes + voteMod}</p>
-        <button onClick={() => this.changeVote("down")} disabled={voteMod === -1}>Down</button>
+        <button
+          onClick={() => this.changeVote("down")}
+          disabled={voteMod === -1}
+        >
+          Down
+        </button>
       </span>
     );
   }
@@ -26,11 +31,13 @@ class VoteCount extends Component {
     this.setState({
       voteMod: voteChange
     });
+    patchVote(this.props.parent._id, this.props.type, direction);
   };
 }
 
 VoteCount.propTypes = {
-  parent: PropTypes.object
+  parent: PropTypes.object,
+  type: PropTypes.string
 };
 
 export default VoteCount;
