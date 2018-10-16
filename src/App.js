@@ -12,6 +12,11 @@ import TopicAdder from "./components/TopicAdder";
 import Home from "./components/Home";
 
 class App extends Component {
+
+  state = {
+    currentUser: {id: "bb0d890e236586b6d14e2c1", username: "jessjelly"}
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,7 +36,7 @@ class App extends Component {
             <TopicSearcher path="find-topic" />
             <TopicAdder path="add-topic" />
           </Explorer>
-          <UserProfile path="/users/123">
+          <UserProfile userId={this.state.currentUser.username} path="/users/123">
             <CommentList path="comments" />
             <ArticleList path="articles" />
           </UserProfile>

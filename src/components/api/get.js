@@ -7,3 +7,9 @@ export const getAllOfType = (type) => {
         return(data[type]);
     })
 }
+
+export const getTypeById = (id, type) => {
+    return axios.get(`${BASE_URL}/${type}s/${id}`).then(({data}) => {
+        return data.user;
+    })
+}
