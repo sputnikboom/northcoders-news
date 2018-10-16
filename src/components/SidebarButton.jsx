@@ -1,13 +1,17 @@
 import React, { Component } from "react";
+import TopicList from "./TopicList";
+import { getAllOfType } from "./api/get";
+
 
 class SidebarButton extends Component {
   state = {
-    showMenu: false
+    showMenu: false,
+    topics: []
   };
 
   render() {
     return (
-      <div class="dropdown">
+      <div className="dropdown">
         <button onClick={this.showMenu}>Menu</button>
 
         {this.state.showMenu && (
@@ -17,9 +21,7 @@ class SidebarButton extends Component {
               this.SidebarButton = element;
             }}
           >
-            <button>hello</button>
-            <button>another hello</button>
-            <button>this will be a list of topics</button>
+            <TopicList topics={this.state.topics}/>
           </div>
         )}
       </div>
@@ -41,6 +43,11 @@ class SidebarButton extends Component {
       document.removeEventListener("click", this.hideMenu);
     }
   };
+
+  componentDidMount(){
+    getAllOfType("topics").then(topics => this.setState({ topics }))
+  }
+
 }
 
 export default SidebarButton;

@@ -27,9 +27,9 @@ class App extends Component {
         <Router>
           <Home path="/" />
           <Explorer path="/explore">
-          <TopicBrowser path="topics" />
-          <TopicSearcher path="find-topic" />
-          <TopicAdder path="add-topic" />
+            <TopicBrowser path="topics" />
+            <TopicSearcher path="find-topic" />
+            <TopicAdder path="add-topic" />
           </Explorer>
           <UserProfile path="/users/123">
             <CommentList path="comments" />

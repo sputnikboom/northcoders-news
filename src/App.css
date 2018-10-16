@@ -17,13 +17,13 @@ nav {
   background-color: rgba(0, 255, 0, 0.5);
 }
 
-.sub-nav{
-  text-align: center;
-}
-
 main {
   border: 2px solid rgba(0, 0, 255, 1);
   background-color: rgba(0, 0, 255, 0.5);
+}
+
+.article-list{
+  overflow-y: auto;
 }
 
 .article-card-container {
@@ -66,6 +66,7 @@ main {
 
 .vote-container {
   grid-area: vote-container;
+  text-align: center;
   border: 2px dotted rgba(255, 0, 0, 1);
   background-color: rgba(255, 0, 0, 0.5);
 }

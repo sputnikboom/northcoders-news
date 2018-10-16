@@ -1,19 +1,21 @@
 import React from "react";
 import VoteCount from "./VoteCount";
 
-const ArticleList = () => {
+const ArticleList = (props) => {
   return (
-    <main>
-      <div className="article-card-container">
+    <main className="article-list">
+      {props.articles.map(article => {
+      return (<div key={article._id} className="article-card-container">
         <VoteCount />
-        <h3>Title</h3>
+        <h3>{article.title}</h3>
         <div className="article-card-details">
-          <span>Time</span>
-          <span>User</span>
-          <span>Topic</span>
+          <span>{article.created_at}</span>
+          <span>{article.created_by.username}</span>
+          <span>{article.belongs_to}</span>
         </div>
-        <span className="article-interactions">Comments</span>
-      </div>
+        <span className="article-interactions">{`${article.comment_count} Comments`}</span>
+      </div>)
+      })}
     </main>
   );
 };
