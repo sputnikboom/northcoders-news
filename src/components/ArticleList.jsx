@@ -1,5 +1,6 @@
 import React from "react";
 import VoteCount from "./VoteCount";
+import PropTypes from "prop-types";
 
 const ArticleList = props => {
   return (
@@ -23,5 +24,9 @@ const ArticleList = props => {
     </main>
   );
 };
+
+ArticleList.propTypes = {
+  articles: PropTypes.array
+}
 
 export default ArticleList;

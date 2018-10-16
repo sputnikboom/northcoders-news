@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import {getTypeById} from "./api/get.js";
+import {getOneById} from "./api/get.js";
+import PropTypes from 'prop-types';
 
 class UserProfile extends Component {
 
@@ -16,19 +17,23 @@ class UserProfile extends Component {
         <div>{this.state.user.name}</div>
         <img src={this.state.user.avatar_url} alt="avatar"/>
 
-        <nav className="sub-nav">
+        {/* <nav className="sub-nav">
           <Link to="./comments">Comments</Link>
           <Link to="./articles">Articles</Link>
         </nav>
-        {this.props.children}
+        {this.props.children} */}
       </div>
     );
   }
 
   componentDidMount() {
-    getTypeById(this.props.userId, "user").then(user => {this.setState({ user })});
+    getOneById(this.props.userId, "user").then(user => {this.setState({ user })});
   }
 
+}
+
+UserProfile.propTypes = {
+  userId: PropTypes.string
 }
 
 export default UserProfile;

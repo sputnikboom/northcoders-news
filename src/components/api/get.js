@@ -8,8 +8,14 @@ export const getAllOfType = (type) => {
     })
 }
 
-export const getTypeById = (id, type) => {
+export const getOneById = (id, type) => {
     return axios.get(`${BASE_URL}/${type}s/${id}`).then(({data}) => {
         return data.user;
+    })
+}
+
+export const getListById = (id, type, listOf) => {
+    return axios.get(`${BASE_URL}/${type}/${id}/${listOf}`).then(({data}) => {
+        return data[listOf];
     })
 }

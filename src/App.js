@@ -10,6 +10,7 @@ import TopicBrowser from "./components/TopicBrowser";
 import TopicSearcher from "./components/TopicSearcher";
 import TopicAdder from "./components/TopicAdder";
 import Home from "./components/Home";
+import TopicPage from "./components/TopicPage";
 
 class App extends Component {
 
@@ -31,6 +32,7 @@ class App extends Component {
 
         <Router>
           <Home path="/" />
+          <TopicPage path="/topics/:topic_slug" />
           <Explorer path="/explore">
             <TopicBrowser path="topics" />
             <TopicSearcher path="find-topic" />
