@@ -11,8 +11,14 @@ header {
 }
 
 nav {
+  display: inline-flex;
+  width: 100%;
   border: 2px solid rgba(0, 255, 0, 1);
   background-color: rgba(0, 255, 0, 0.5);
+}
+
+.sub-nav{
+  text-align: center;
 }
 
 main {
@@ -74,4 +80,16 @@ main {
 
 .username {
   grid-area: comment-body;
+}
+
+.dropdown {
+  position: relative;
+  display:inline-block;
+}
+
+.menu-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1
 }

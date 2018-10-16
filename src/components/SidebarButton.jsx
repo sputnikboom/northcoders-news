@@ -7,18 +7,19 @@ class SidebarButton extends Component {
 
   render() {
     return (
-      <div>
+      <div class="dropdown">
         <button onClick={this.showMenu}>Menu</button>
 
         {this.state.showMenu && (
           <div
-            className="menu"
+            className="menu-content"
             ref={element => {
               this.SidebarButton = element;
             }}
           >
             <button>hello</button>
             <button>another hello</button>
+            <button>this will be a list of topics</button>
           </div>
         )}
       </div>
