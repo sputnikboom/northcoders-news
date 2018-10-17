@@ -23,7 +23,7 @@ class TopicPage extends Component {
   }
 
   getArticles = topic => {
-    getListById(topic, "topics", "articles").then(
+    getListById(topic, "topic", "articles").then(
       articles => this.setState({ articles }),
       () => console.log(this.state.articles)
     );

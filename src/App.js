@@ -11,12 +11,13 @@ import TopicAdder from "./components/TopicAdder";
 import Home from "./components/Home";
 import TopicPage from "./components/TopicPage";
 import Article from "./components/Article";
+import Login from "./components/Login";
+import LogOut from "./components/LogOut";
 
 class App extends Component {
-
   state = {
-    currentUser: {id: "bb0d890e236586b6d14e2c1", username: "jessjelly"}
-  }
+    user: {}
+  };
 
   render() {
     return (
@@ -27,7 +28,12 @@ class App extends Component {
           <span>Current Topic</span>
           <Link to="/">Home</Link>
           <Link to="/explore">Explore</Link>
-          <Link to={`/users/${this.state.currentUser.username}`}>My Profile</Link>
+          <Link to={`/users/${this.state.user.username}`}>My Profile</Link>
+          {!this.state.user.username ? (
+            <Login toggleLogin={this.toggleLogin} />
+          ) : (
+            <LogOut toggleLogin={this.toggleLogin}/>
+          )}
         </nav>
 
         <Router>
@@ -41,11 +47,15 @@ class App extends Component {
             <Comments path="comments" />
             <Articles path="articles" />
           </UserProfile>
-          <Article path="/articles/:article_id"/>
+          <Article path="/articles/:article_id" />
         </Router>
       </div>
     );
   }
+
+  toggleLogin = user => {
+    user ? this.setState({ user }) : this.setState({ user: {} });
+  };
 }
 
 export default App;

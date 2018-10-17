@@ -9,7 +9,7 @@ const Comments = props => {
     <main className="comment-list">
       {props.comments.map(comment => {
         return (
-          <div className="comment-container">
+          <div key={comment._id}className="comment-container">
             <VoteCount parent={comment} type={"comment"} />
             <Link to={`/users/${comment.created_by.username}`} className="comment-username">
               {comment.created_by.username}
@@ -24,7 +24,7 @@ const Comments = props => {
 };
 
 Comments.propTypes = {
-  comments: PropTypes.array.isRequired
+  comments: PropTypes.array
 };
 
 export default Comments;

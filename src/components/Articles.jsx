@@ -2,6 +2,7 @@ import React from "react";
 import VoteCount from "./VoteCount";
 import PropTypes from "prop-types";
 import { Link } from "@reach/router";
+import { formatDate } from "./utils";
 
 const Articles = props => {
   return (
@@ -12,8 +13,8 @@ const Articles = props => {
             <VoteCount parent={article} type={"article"} />
             <Link to={`articles/${article._id}`}>{article.title}</Link>
             <div className="article-card-details">
-              <span>{article.created_at}</span>
-              <Link to={`/users/${article.created_by.username}`}>
+              <span>{formatDate(article.created_at)}</span>
+              <Link to={`users/${article.created_by.username}`}>
                 {article.created_by.username}
               </Link>
               <span>{article.belongs_to}</span>
