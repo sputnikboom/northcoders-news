@@ -11,13 +11,13 @@ const Articles = props => {
         return (
           <div key={article._id} className="article-card-container">
             <VoteCount parent={article} type={"article"} />
-            <Link to={`articles/${article._id}`}>{article.title}</Link>
+            <Link to={`/articles/${article._id}`}>{article.title}</Link>
             <div className="article-card-details">
               <span>{formatDate(article.created_at)}</span>
-              <Link to={`users/${article.created_by.username}`}>
+              <Link to={`/users/${article.created_by.username}`}>
                 {article.created_by.username}
               </Link>
-              <span>{article.belongs_to}</span>
+              <Link to={`/topics/${article.belongs_to}`}>{article.belongs_to}</Link>
             </div>
             <span className="article-interactions">{`${
               article.comment_count

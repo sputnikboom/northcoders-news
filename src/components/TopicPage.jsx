@@ -9,7 +9,7 @@ class TopicPage extends Component {
   };
 
   render() {
-    return <Articles articles={this.state.articles} />;
+    return <Articles articles={this.state.articles} userId={this.props.userId}/>;
   }
 
   componentDidMount() {
@@ -31,7 +31,7 @@ class TopicPage extends Component {
 }
 
 TopicPage.propTypes = {
-  topic_slug: PropTypes.string
+  topic_slug: PropTypes.string,
 };
 
 export default TopicPage;

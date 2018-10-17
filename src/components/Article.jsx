@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { getListById, getOneById } from "./api/get.js";
+import { getOneById } from "./api/get.js";
 import Comments from "./Comments";
 
 class Article extends Component {
   state = {
-    comments: [],
     article: {}
   };
 
@@ -14,25 +13,27 @@ class Article extends Component {
       <main>
         <h2>{this.state.article.title}</h2>
         <div>{this.state.article.body}</div>
-        <Comments comments={this.state.comments} />
+        <Comments
+          comments={this.state.comments}
+          userId={this.props.userId}
+          article_id={this.props.article_id}
+        />
       </main>
     );
   }
 
   componentDidMount() {
-    return Promise.all([
-      getOneById(this.props.article_id, "article"),
-      getListById(this.props.article_id, "article", "comments")
-    ]).then(([article, comments]) => {
+    return getOneById(this.props.article_id, "article").then(article => {
       this.setState({
-        comments, article
-      })
+        article
+      });
     });
   }
 }
 
 Article.propTypes = {
-  artice_id: PropTypes.string
+  artice_id: PropTypes.string,
+  userId: PropTypes.string
 };
 
 export default Article;
