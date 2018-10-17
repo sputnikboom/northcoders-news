@@ -3,11 +3,8 @@ import "./App.css";
 import { Link, Router } from "@reach/router";
 import SidebarButton from "./components/SidebarButton";
 import Articles from "./components/Articles";
-import Explorer from "./components/Explorer";
 import UserProfile from "./components/UserProfile";
 import Comments from "./components/Comments";
-import TopicSearcher from "./components/TopicSearcher";
-import TopicAdder from "./components/TopicAdder";
 import Home from "./components/Home";
 import TopicPage from "./components/TopicPage";
 import Article from "./components/Article";
@@ -27,7 +24,6 @@ class App extends Component {
           <SidebarButton />
           <span>Current Topic</span>
           <Link to="/">Home</Link>
-          <Link to="/explore">Explore</Link>
           {!this.state.user.username ? (
             <Login toggleLogin={this.toggleLogin} />
           ) : (
@@ -40,11 +36,7 @@ class App extends Component {
 
         <Router>
           <Home path="/" />
-          <TopicPage path="/topics/:topic_slug" />
-          <Explorer path="/explore">
-            <TopicSearcher path="find-topic" />
-            <TopicAdder path="add-topic" />
-          </Explorer>
+          <TopicPage path="/topics/:topic_slug" userId={this.state.user._id} />
           <UserProfile path="/users/:user_id">
             <Comments path="comments" />
             <Articles path="articles" />

@@ -21,11 +21,10 @@ class CommentAdder extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addComment(this.state.body)
-        // .then(() => {
-        //     this.setState({
-        //         body: ""
-        //     })
-        // })
+        this.setState({
+                body: ""
+            })
+        
     }
 
     handleChange = (event) => {

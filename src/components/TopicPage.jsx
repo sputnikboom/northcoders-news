@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { getListById } from "./api/get";
 import Articles from "./Articles";
+import TopicAdder from "./TopicAdder";
+import { postArticle } from "./api/post";
 
 class TopicPage extends Component {
   state = {
@@ -9,7 +11,12 @@ class TopicPage extends Component {
   };
 
   render() {
-    return <Articles articles={this.state.articles} userId={this.props.userId}/>;
+    return (
+      <>
+        {this.props.userId && <TopicAdder addArticle={this.addArticle} />}
+        <Articles articles={this.state.articles} />
+      </>
+    );
   }
 
   componentDidMount() {
@@ -23,15 +30,22 @@ class TopicPage extends Component {
   }
 
   getArticles = topic => {
-    getListById(topic, "topic", "articles").then(
-      articles => this.setState({ articles }),
-      () => console.log(this.state.articles)
+    getListById(topic, "topic", "articles").then(articles =>
+      this.setState({ articles })
+    );
+  };
+
+  addArticle = (body, title) => {
+    postArticle(body, title, this.props.userId, this.props.topic_slug).then(
+      newArticle =>
+        this.setState({ articles: [newArticle, ...this.state.articles] })
     );
   };
 }
 
 TopicPage.propTypes = {
   topic_slug: PropTypes.string,
+  userId: PropTypes.string
 };
 
 export default TopicPage;

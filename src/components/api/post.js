@@ -7,3 +7,10 @@ export const postComment = (body, userId, articleId) => {
         return data;
     })
 }
+
+export const postArticle = (body, title, userId, topic) => {
+    return axios.post(`${BASE_URL}/topics/${topic}/articles`, {body, title, created_by: userId})
+    .then(({data}) => {
+        return data;
+    })
+}
