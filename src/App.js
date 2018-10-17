@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import "./App.css";
 import { Link, Router } from "@reach/router";
 import SidebarButton from "./components/SidebarButton";
-import ArticleList from "./components/ArticleList";
+import Articles from "./components/Articles";
 import Explorer from "./components/Explorer";
 import UserProfile from "./components/UserProfile";
-import CommentList from "./components/CommentList";
-import TopicBrowser from "./components/TopicBrowser";
+import Comments from "./components/Comments";
 import TopicSearcher from "./components/TopicSearcher";
 import TopicAdder from "./components/TopicAdder";
 import Home from "./components/Home";
 import TopicPage from "./components/TopicPage";
+import Article from "./components/Article";
 
 class App extends Component {
 
@@ -34,14 +34,14 @@ class App extends Component {
           <Home path="/" />
           <TopicPage path="/topics/:topic_slug" />
           <Explorer path="/explore">
-            <TopicBrowser path="topics" />
             <TopicSearcher path="find-topic" />
             <TopicAdder path="add-topic" />
           </Explorer>
           <UserProfile path="/users/:user_id">
-            <CommentList path="comments" />
-            <ArticleList path="articles" />
+            <Comments path="comments" />
+            <Articles path="articles" />
           </UserProfile>
+          <Article path="/articles/:article_id"/>
         </Router>
       </div>
     );
