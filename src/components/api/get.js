@@ -10,12 +10,12 @@ export const getAllOfType = (type) => {
 
 export const getOneById = (id, type) => {
     return axios.get(`${BASE_URL}/${type}s/${id}`).then(({data}) => {
-        return data.user;
+        return data[type];
     })
 }
 
 export const getListById = (id, type, listOf) => {
-    return axios.get(`${BASE_URL}/${type}/${id}/${listOf}`).then(({data}) => {
+    return axios.get(`${BASE_URL}/${type}s/${id}/${listOf}`).then(({data}) => {
         return data[listOf];
     })
 }

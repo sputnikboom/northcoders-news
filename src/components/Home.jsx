@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ArticleList from "./ArticleList";
+import Articles from "./Articles";
 import { getAllOfType } from "./api/get";
 
 class Home extends Component {
@@ -9,7 +9,7 @@ class Home extends Component {
     }
 
   render() {
-    return <ArticleList articles={this.state.articles}/>;
+    return <Articles articles={this.state.articles}/>;
   }
 
   componentDidMount(){

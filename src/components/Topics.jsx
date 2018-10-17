@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import {Link} from '@reach/router';
 
-function TopicList (props) {
+function Topics (props) {
     return (
         <ul>
             {props.topics.map(topic => {
@@ -15,8 +15,8 @@ function TopicList (props) {
 
 }
 
-TopicList.propTypes = {
+Topics.propTypes = {
     topics: PropTypes.array
 }
 
-export default TopicList;
+export default Topics;

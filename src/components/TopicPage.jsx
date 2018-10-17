@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { getListById } from "./api/get";
-import ArticleList from "./ArticleList";
+import Articles from "./Articles";
 
 class TopicPage extends Component {
   state = {
@@ -9,7 +9,7 @@ class TopicPage extends Component {
   };
 
   render() {
-    return <ArticleList articles={this.state.articles} />;
+    return <Articles articles={this.state.articles} />;
   }
 
   componentDidMount() {

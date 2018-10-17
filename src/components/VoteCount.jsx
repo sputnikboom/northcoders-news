@@ -34,8 +34,8 @@ class VoteCount extends Component {
 }
 
 VoteCount.propTypes = {
-  parent: PropTypes.object,
-  type: PropTypes.string
+  parent: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired
 };
 
 export default VoteCount;
