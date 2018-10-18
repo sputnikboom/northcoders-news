@@ -22,15 +22,14 @@ class App extends Component {
         <header>northcoders news</header>
         <nav>
           <SidebarButton />
-          <span>Current Topic</span>
           <Link to="/">Home</Link>
           {!this.state.user.username ? (
             <Login toggleLogin={this.toggleLogin} />
           ) : (
-            <>
-            <Link to={`/users/${this.state.user.username}`}>My Profile</Link>
-            <LogOut toggleLogin={this.toggleLogin}/>
-            </>
+            <div className="user-login">
+              <Link to={`/users/${this.state.user.username}`}>My Profile</Link>{" "}
+              <LogOut toggleLogin={this.toggleLogin} />
+            </div>
           )}
         </nav>
 
@@ -41,7 +40,7 @@ class App extends Component {
             <Comments path="comments" />
             <Articles path="articles" />
           </UserProfile>
-          <Article path="/articles/:article_id"  userId={this.state.user._id} />
+          <Article path="/articles/:article_id" userId={this.state.user._id} />
         </Router>
       </div>
     );

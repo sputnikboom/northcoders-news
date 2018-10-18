@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { patchVote } from "./api/patch";
+import "../VoteCount.css";
 
 class VoteCount extends Component {
   state = {
@@ -11,13 +12,13 @@ class VoteCount extends Component {
     const { voteMod } = this.state;
     return (
       <span className="vote-container">
-        <button onClick={() => this.changeVote("up")} disabled={voteMod === 1}>
-          Up
+        <button className="vote-up" onClick={() => this.changeVote("up")} disabled={voteMod === 1}>
+        <i className="material-icons">arrow_upwards</i>
         </button>
-        <p>{this.props.parent.votes + voteMod}</p>
-        <button
+        <div className="vote-score">{this.props.parent.votes + voteMod}</div>
+        <button className="vote-down"
           onClick={() => this.changeVote("down")} disabled={voteMod === -1}>
-          Down
+        <i className="material-icons">arrow_downwards</i>
         </button>
       </span>
     );

@@ -1,0 +1,26 @@
+.article-card-container {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 0.5fr 6fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    grid-template-areas:
+      "vote-container title"
+      "vote-container article-card-details"
+      "vote-container article-interactions";
+    border: 2px dotted rgba(255, 255, 0, 1);
+    background-color: white;
+  }
+
+  .article-card-container:hover {
+      background-color: #EFF7FF
+  }
+  
+  .article-card-details {
+    grid-area: article-card-details;
+    font-size: 14px;
+  }
+  
+  .article-interactions {
+    grid-area: article-interactions;
+  }
+

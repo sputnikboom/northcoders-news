@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Topics from "./Topics";
 import { getAllOfType } from "./api/get";
+import "../Menu.css"
 
 
 class SidebarButton extends Component {
@@ -12,7 +13,7 @@ class SidebarButton extends Component {
   render() {
     return (
       <div className="dropdown">
-        <button onClick={this.showMenu}>Menu</button>
+        <button className="menu-button" onClick={this.showMenu}>Menu</button>
 
         {this.state.showMenu && (
           <div

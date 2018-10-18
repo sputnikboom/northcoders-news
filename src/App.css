@@ -11,8 +11,9 @@ header {
 }
 
 nav {
-  display: inline-flex;
+  display: flex;
   width: 100%;
+  padding: 5px;
   border: 2px solid rgba(0, 255, 0, 1);
   background-color: rgba(0, 255, 0, 0.5);
 }
@@ -22,30 +23,35 @@ main {
   background-color: rgba(0, 0, 255, 0.5);
 }
 
-.article-list{
-  overflow-y: auto;
+button {
+  cursor: pointer;
 }
 
-.article-card-container {
-  display: grid;
-  text-align: left;
-  grid-template-columns: 1fr 6fr;
-  grid-template-rows: 3fr 1fr 1fr;
-  grid-template-areas:
-    "vote-container title"
-    "vote-container article-card-details"
-    "vote-container article-interactions";
-  border: 2px dotted rgba(255, 255, 0, 1);
-  background-color: rgba(255, 255, 0, 0.5);
+a {
+  text-decoration: none;
+  color: #336699
 }
 
-.article-card-details {
-  grid-area: article-card-details;
+/* Nav bar */
+
+.user-login {
+  right: 4px;
+  position: absolute;
 }
 
-.article-interactions {
-  grid-area: article-interactions;
+.login-button {
+  border-radius: 25px;
+  border: none;
+  padding: 4px 8px;
 }
+
+.menu-button {
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+
+
+/* not nav bar */
 
 .comment-list {
   border: 2px dotted rgba(255, 255, 0, 1);
@@ -55,20 +61,13 @@ main {
 .comment-container {
   display: grid;
   text-align: left;
-  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-columns: 0.5fr 3fr 3fr;
   grid-template-rows: 1fr, 3fr;
   grid-template-areas:
   "vote-container comment-username comment-time"
   "vote-container comment-body comment-body";
   border: 2px dotted rgba(0, 255, 0, 1);
   background-color: rgba(0, 255, 0, 0.5);
-}
-
-.vote-container {
-  grid-area: vote-container;
-  text-align: center;
-  border: 2px dotted rgba(255, 0, 0, 1);
-  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .username {
