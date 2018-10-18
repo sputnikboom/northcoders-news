@@ -32,8 +32,8 @@ class Article extends Component {
 }
 
 Article.propTypes = {
-  artice_id: PropTypes.string,
-  userId: PropTypes.string
+  artice_id: PropTypes.string.isRequired,
+  userId: PropTypes.string.isRequired
 };
 
 export default Article;

@@ -18,7 +18,7 @@ function Topics (props) {
 }
 
 Topics.propTypes = {
-    topics: PropTypes.array
+    topics: PropTypes.array.isRequired
 }
 
 export default Topics;

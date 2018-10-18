@@ -22,7 +22,7 @@ class SidebarButton extends Component {
               this.SidebarButton = element;
             }}
           >
-            <Topics topics={this.state.topics}/>
+            <Topics topics={this.state.topics} hideMenu={this.hideMenu}/>
           </div>
         )}
       </div>

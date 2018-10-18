@@ -14,13 +14,8 @@
 li {
     margin: 4px 0px;
     width: 100%;
-    border: black solid 2px;
 }
 
-li :hover {
-    /* background-color: #EFF7FF; */
-    background-color: red;
-}
 
 
 .dropdown {

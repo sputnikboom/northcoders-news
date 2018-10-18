@@ -8,7 +8,7 @@ class CommentAdder extends Component {
 
     render(){
         return(
-            <form onSubmit={this.handleSubmit}>
+            <form  onSubmit={this.handleSubmit}>
                 <textarea 
                 name="comment-body" 
                 onChange={this.handleChange} 
@@ -35,7 +35,8 @@ class CommentAdder extends Component {
 }
 
 CommentAdder.propTypes = {
-    addComment: PropTypes.func.isRequired
+    addComment: PropTypes.func.isRequired,
+    userId: PropTypes.string
 }
 
 

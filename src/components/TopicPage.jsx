@@ -44,8 +44,8 @@ class TopicPage extends Component {
 }
 
 TopicPage.propTypes = {
-  topic_slug: PropTypes.string,
-  userId: PropTypes.string
+  topic_slug: PropTypes.string.isRequired,
+  userId: PropTypes.string.isRequired
 };
 
 export default TopicPage;

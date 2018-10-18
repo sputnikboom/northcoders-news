@@ -34,7 +34,7 @@ const Articles = props => {
 };
 
 Articles.propTypes = {
-  articles: PropTypes.array
+  articles: PropTypes.array.isRequired
 };
 
 export default Articles;

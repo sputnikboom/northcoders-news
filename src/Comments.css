@@ -1,6 +1,6 @@
 .comment-list {
-    border: 2px dotted rgba(255, 255, 0, 1);
     background-color: white;
+    padding-bottom: 20px;
   }
   
   .comment-container {
@@ -9,6 +9,7 @@
     grid-template-columns: 0.5fr 6fr;
     grid-template-rows: 1fr, 3fr;
     margin: 8px;
+ 
     grid-template-areas:
     "vote-container comment-details"
     "vote-container comment-body";
@@ -25,3 +26,12 @@
   .comment-body {
     grid-area: comment-body;
   }
+
+  /* .comment-adder :before {
+        margin: 0 auto;
+        content: "";
+        width: 60%;
+        display: block;
+        border-top: 1px dotted darkgray;
+        padding-top: 2px;
+  } */
