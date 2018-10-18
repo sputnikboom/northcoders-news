@@ -1,13 +1,13 @@
 .vote-container {
     grid-area: vote-container;
     text-align: center;
-    border: 2px dotted rgba(255, 0, 0, 1);
     margin: 4px;
   }
 
 .vote-up, .vote-down {
     background: transparent;
     border: solid black 1px;
+    color: darkslategray;
 }
 
 .vote-up:disabled {

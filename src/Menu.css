@@ -2,3 +2,28 @@
     border: none;
     height: 100%
 }
+
+.all-topics {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+li {
+    margin: 4px 0px;
+    width: 100%;
+    border: black solid 2px;
+}
+
+li :hover {
+    /* background-color: #EFF7FF; */
+    background-color: red;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    width: 100%
+}

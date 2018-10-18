@@ -15,7 +15,7 @@ class Comments extends Component {
   render() {
     console.log(this.state.comments)
     return (
-      <main className="comment-list">
+      <main id="comments" className="comment-list">
       {this.props.userId && <CommentAdder userId={this.props.userId} addComment={this.addComment}/>}
         {this.state.comments.map(comment => {
           return (

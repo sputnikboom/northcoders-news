@@ -7,12 +7,21 @@
       "vote-container title"
       "vote-container article-card-details"
       "vote-container article-interactions";
-    border: 2px dotted rgba(255, 255, 0, 1);
+    /* border: 2px dotted rgba(255, 255, 0, 1); */
     background-color: white;
   }
 
-  .article-card-container:hover {
+  /* .article-card-container:hover {
       background-color: #EFF7FF
+  } */
+
+  .article-card-container:after {
+      margin: 0 auto;
+      content: "";
+      width: 60%;
+      display: block;
+      border-bottom: 1px solid darkgray;
+      padding-top: 2px;
   }
   
   .article-card-details {
