@@ -13,7 +13,9 @@ class Home extends Component {
   }
 
   componentDidMount(){
-      getAllOfType("articles").then(articles => this.setState({articles}));
+      getAllOfType("articles")
+      .then(articles => this.setState({articles}))
+      .catch(err => this.props.navigate('/error', {replace:true, state: {err: err.message}}))
   }
 
 }

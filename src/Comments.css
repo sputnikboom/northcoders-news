@@ -28,3 +28,12 @@
     grid-area: comment-body;
     text-align: left;
   }
+
+  .delete-button {
+    border-radius: 25px;
+    border: none;
+    padding: 4px 8px;
+    margin: 2px 8px;
+    font-size: 15px;
+    background-color: #cee3f8
+  }

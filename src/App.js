@@ -10,6 +10,7 @@ import TopicPage from "./components/TopicPage";
 import Article from "./components/Article";
 import Login from "./components/Login";
 import LogOut from "./components/LogOut";
+import NotFound from "./components/NotFound";
 
 
 class App extends Component {
@@ -23,7 +24,6 @@ class App extends Component {
        <header><Link className="home-title" to="/">Northcoders news</Link></header>
         <nav>
           <SidebarButton />
-          <span>Current Topic</span>
           {!this.state.user.username ? (
             <Login toggleLogin={this.toggleLogin} />
           ) : (
@@ -42,6 +42,8 @@ class App extends Component {
             <Articles path="articles" />
           </UserProfile>
           <Article path="/articles/:article_id" userId={this.state.user._id} />
+          <NotFound path="/error"/>
+          <NotFound default/>
         </Router>
       </div>
     );

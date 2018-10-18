@@ -9,7 +9,30 @@
 
 .article-body {
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   margin-left: 20%;
   margin-right: 20%;
+}
+
+.comment-button {
+  border-radius: 25px;
+  border: none;
+  padding: 8px 8px;
+  margin: 0 8px;
+  font-size: 15px;
+  color:#eff7fe;
+  background-color: darkslategray;
+}
+
+.comment-form {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.comment-text {
+  height: 90%;
+  width: 50%;
 }

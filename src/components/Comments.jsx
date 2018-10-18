@@ -39,7 +39,7 @@ class Comments extends Component {
                   {formatDate(comment.created_at)}
                 </span>
                 {comment.created_by._id === this.props.userId && (
-                  <button onClick={() => this.deleteComment(comment._id)}>
+                  <button className="delete-button" onClick={() => this.deleteComment(comment._id)}>
                     delete
                   </button>
                 )}
