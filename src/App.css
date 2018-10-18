@@ -11,10 +11,10 @@ header {
 }
 
 nav {
-  display: flex;
-  padding: 5px;
-  border: 2px solid rgba(0, 255, 0, 1);
-  background-color: rgba(0, 255, 0, 0.5);
+  display: inline-flex;
+  padding: 10px;
+  background-color: #cee3f8;
+  border-bottom: #5f99cf 1px solid;
 }
 
 main {
@@ -28,7 +28,7 @@ button {
 
 a {
   text-decoration: none;
-  color: #336699
+  color: #448ffa;
 }
 
 /* Nav bar */
@@ -42,57 +42,10 @@ a {
   border-radius: 25px;
   border: none;
   padding: 4px 8px;
+  background-color:#eff7fe
 }
 
 .menu-button {
   margin-bottom: 4px;
   margin-right: 4px;
-}
-
-
-/* not nav bar */
-
-.comment-list {
-  border: 2px dotted rgba(255, 255, 0, 1);
-  background-color: rgba(255, 255, 0, 0.5);
-}
-
-.comment-container {
-  display: grid;
-  text-align: left;
-  grid-template-columns: 0.5fr 3fr 3fr;
-  grid-template-rows: 1fr, 3fr;
-  grid-template-areas:
-  "vote-container comment-username comment-time"
-  "vote-container comment-body comment-body";
-  border: 2px dotted rgba(0, 255, 0, 1);
-  background-color: rgba(0, 255, 0, 0.5);
-}
-
-.username {
-  grid-area: username;
-}
-
-.username {
-  grid-area: comment-time;
-}
-
-.username {
-  grid-area: comment-body;
-}
-
-.dropdown {
-  position: relative;
-  display:inline-block;
-}
-
-.menu-content {
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  z-index: 1
-}
-
-ul{
-list-style: none;
 }

@@ -1,6 +1,7 @@
 .menu-button {
     border: none;
-    height: 100%
+    height: 100%;
+    background-color: #eff7fe;
 }
 
 .all-topics {
@@ -21,9 +22,23 @@ li :hover {
     background-color: red;
 }
 
+
+.dropdown {
+    position: relative;
+    display:inline-block;
+  }
+  
+  .menu-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+  }
+
 ul {
     padding: 0;
     margin: 0;
     text-align: left;
-    width: 100%
+    width: 100%;
+    list-style: none;
 }

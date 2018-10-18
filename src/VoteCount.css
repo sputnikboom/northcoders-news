@@ -6,7 +6,7 @@
 
 .vote-up, .vote-down {
     background: transparent;
-    border: solid black 1px;
+    border: none;
     color: darkslategray;
 }
 

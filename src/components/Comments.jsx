@@ -6,6 +6,7 @@ import { formatDate } from "./utils/index.js";
 import CommentAdder from "./CommentAdder";
 import { getListById } from "./api/get.js";
 import {postComment} from "./api/post.js";
+import "../Comments.css";
 
 class Comments extends Component {
   state = {
@@ -21,15 +22,16 @@ class Comments extends Component {
           return (
             <div key={comment._id} className="comment-container">
               <VoteCount parent={comment} type={"comment"} />
+              <span className="comment-details">
               <Link
                 to={`/users/${comment.created_by.username}`}
                 className="comment-username"
-              >
+              > 
                 {comment.created_by.username}
-              </Link>
-              <span className="comment-time">
+              </Link><span className="comment-time"><span> posted at </span>
                 {formatDate(comment.created_at)}
-              </span>
+              </span></span>
+              
               <div className="comment-body">{comment.body}</div>
             </div>
           );

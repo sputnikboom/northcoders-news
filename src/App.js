@@ -22,6 +22,7 @@ class App extends Component {
         <header>northcoders news</header>
         <nav>
           <SidebarButton />
+          <span>Current Topic</span>
           {!this.state.user.username ? (
             <Login toggleLogin={this.toggleLogin} />
           ) : (
