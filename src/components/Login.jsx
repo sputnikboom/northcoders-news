@@ -16,7 +16,7 @@ class Login extends Component {
           value={this.state.username}
           onChange={this.handleChange}
         />{" "}
-        <button className="login-button" >Log In</button>
+        <button className="nav-button" >Log In</button>
       </form>
     );
   }

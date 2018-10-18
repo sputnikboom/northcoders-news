@@ -11,6 +11,7 @@ import Article from "./components/Article";
 import Login from "./components/Login";
 import LogOut from "./components/LogOut";
 
+
 class App extends Component {
   state = {
     user: {}
@@ -19,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>northcoders news</header>
+       <header><Link className="home-title" to="/">Northcoders news</Link></header>
         <nav>
           <SidebarButton />
           <span>Current Topic</span>
@@ -27,7 +28,7 @@ class App extends Component {
             <Login toggleLogin={this.toggleLogin} />
           ) : (
             <div className="user-login">
-              <Link to={`/users/${this.state.user.username}`}>My Profile</Link>{" "}
+              <button className="nav-button"><Link to={`/users/${this.state.user.username}`}>My Profile</Link></button>
               <LogOut toggleLogin={this.toggleLogin} />
             </div>
           )}

@@ -6,6 +6,7 @@ import { formatDate } from "./utils/index.js";
 import CommentAdder from "./CommentAdder";
 import { getListById } from "./api/get.js";
 import { postComment } from "./api/post.js";
+import { removeComment } from "./api/delete.js";
 import "../Comments.css";
 
 class Comments extends Component {
@@ -14,7 +15,6 @@ class Comments extends Component {
   };
 
   render() {
-    console.log(this.state.comments);
     return (
       <main id="comments" className="comment-list">
         {this.props.userId && (
@@ -38,6 +38,11 @@ class Comments extends Component {
                   <span> posted at </span>
                   {formatDate(comment.created_at)}
                 </span>
+                {comment.created_by._id === this.props.userId && (
+                  <button onClick={() => this.deleteComment(comment._id)}>
+                    delete
+                  </button>
+                )}
               </span>
 
               <div className="comment-body">{comment.body}</div>
@@ -57,7 +62,6 @@ class Comments extends Component {
   }
 
   addComment = body => {
-    console.log("???");
     postComment(body, this.props.userId, this.props.article_id).then(
       newComment => {
         this.setState({
@@ -66,11 +70,21 @@ class Comments extends Component {
       }
     );
   };
+
+  deleteComment = commentId => {
+    removeComment(commentId).then(removedComment => {
+      this.setState({
+        comments: this.state.comments.filter(
+          comment => comment._id !== removedComment._id
+        )
+      });
+    });
+  };
 }
 
 Comments.propTypes = {
-  comments: PropTypes.array.isRequired,
-  userId: PropTypes.string.isRequired
+  comments: PropTypes.array,
+  userId: PropTypes.string
 };
 
 export default Comments;

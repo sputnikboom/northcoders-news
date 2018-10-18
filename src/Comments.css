@@ -1,6 +1,7 @@
 .comment-list {
     background-color: white;
     padding-bottom: 20px;
+    margin: 0px 30px;
   }
   
   .comment-container {
@@ -25,13 +26,5 @@
   
   .comment-body {
     grid-area: comment-body;
+    text-align: left;
   }
-
-  /* .comment-adder :before {
-        margin: 0 auto;
-        content: "";
-        width: 60%;
-        display: block;
-        border-top: 1px dotted darkgray;
-        padding-top: 2px;
-  } */

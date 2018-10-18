@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class TopicAdder extends Component {
+class ArticleAdder extends Component {
     
     state = {
         title: '',
@@ -38,8 +38,8 @@ class TopicAdder extends Component {
 
 }
 
-TopicAdder.propTypes = {
+ArticleAdder.propTypes = {
     addArticle: PropTypes.func.isRequired
 }
 
-export default TopicAdder;
+export default ArticleAdder;

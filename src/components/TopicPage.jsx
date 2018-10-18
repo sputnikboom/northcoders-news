@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { getListById } from "./api/get";
 import Articles from "./Articles";
-import TopicAdder from "./TopicAdder";
+import ArticleAdder from "./ArticleAdder";
 import { postArticle } from "./api/post";
 
 class TopicPage extends Component {
@@ -13,7 +13,7 @@ class TopicPage extends Component {
   render() {
     return (
       <>
-        {this.props.userId && <TopicAdder addArticle={this.addArticle} />}
+        {this.props.userId && <ArticleAdder addArticle={this.addArticle} />}
         <Articles articles={this.state.articles} />
       </>
     );
@@ -44,8 +44,8 @@ class TopicPage extends Component {
 }
 
 TopicPage.propTypes = {
-  topic_slug: PropTypes.string.isRequired,
-  userId: PropTypes.string.isRequired
+  topic_slug: PropTypes.string,
+  userId: PropTypes.string
 };
 
 export default TopicPage;

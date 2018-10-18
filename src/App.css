@@ -6,8 +6,15 @@
 }
 
 header {
-  border: 2px solid rgba(255, 0, 0, 1);
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: #5f99cf;
+  padding-left: 15px;
+ 
+  text-align: start;
+}
+
+.home-title { 
+  font-size: 50px;
+  color: white;
 }
 
 nav {
@@ -26,6 +33,7 @@ a {
   color: #448ffa;
 }
 
+
 /* Nav bar */
 
 .user-login {
@@ -33,10 +41,12 @@ a {
   position: absolute;
 }
 
-.login-button {
+.nav-button {
   border-radius: 25px;
   border: none;
-  padding: 4px 8px;
+  padding: 8px 12px;
+  margin: 0 8px;
+  font-size: 15px;
   background-color:#eff7fe
 }
 

@@ -8,11 +8,11 @@ class CommentAdder extends Component {
 
     render(){
         return(
-            <form  onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <textarea 
                 name="comment-body" 
                 onChange={this.handleChange} 
-                value={this.state.target}/>
+                value={this.state.body}/>
                 <button>Post Comment</button>
             </form>
         )
