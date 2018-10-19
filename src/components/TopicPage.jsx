@@ -5,6 +5,7 @@ import Articles from "./Articles";
 import ArticleAdder from "./ArticleAdder";
 import { postArticle } from "./api/post";
 import { navigate } from "@reach/router";
+import "../Articles.css"
 
 class TopicPage extends Component {
   state = {
@@ -21,7 +22,7 @@ class TopicPage extends Component {
           !this.state.addArticle && (
             <button className="form-button" onClick={this.toggleInput}>Add Article</button>
           )}
-        {this.state.addArticle && <ArticleAdder addArticle={this.addArticle} toggleInput={this.toggleInput}/>}
+        {this.state.addArticle && <ArticleAdder userId={this.props.userId} addArticle={this.addArticle} toggleInput={this.toggleInput}/>}
         </div>
         <Articles articles={this.state.articles} />
       </>

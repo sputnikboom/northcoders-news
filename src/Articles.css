@@ -10,10 +10,6 @@
     background-color: white;
   }
 
-  /* .article-card-container:hover {
-      background-color: #EFF7FF
-  } */
-
   .topic-title {
     text-align: start;
     margin-left: 20px;
@@ -21,6 +17,7 @@
 
   .topic-container {
     display: inline-flex;
+    margin-top: 10px;
   }
 
   .form-button {
@@ -51,7 +48,8 @@
     grid-area: article-interactions;
   }
 
-  .article_form {
-    display: inline-flex;
-  }
+  /* .article_form {
+    display: flex;
+    direction: column;
+  } */
 

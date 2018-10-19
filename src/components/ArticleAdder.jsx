@@ -14,6 +14,7 @@ class ArticleAdder extends Component {
         {this.state.inputWarning && (
           <div>New articles must have a title and a body</div>
         )}
+        {this.props.userId &&
         <form className="article-form" onSubmit={this.handleSubmit}>
           <label>Title:</label>
           <input
@@ -33,6 +34,7 @@ class ArticleAdder extends Component {
             Cancel
           </button>
         </form>
+        }
       </>
     );
   }
