@@ -1,55 +1,57 @@
 .article-card-container {
-    display: grid;
-    text-align: left;
-    grid-template-columns: 0.5fr 6fr;
-    grid-template-rows: 3fr 1fr 1fr;
-    grid-template-areas:
-      "vote-container title"
-      "vote-container article-card-details"
-      "vote-container article-interactions";
-    background-color: white;
-  }
+  display: grid;
+  text-align: left;
+  grid-template-columns: 0.5fr 6fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-areas:
+    "vote-container title"
+    "vote-container article-card-details"
+    "vote-container article-interactions";
+  background-color: white;
+}
 
-  .topic-title {
-    text-align: start;
-    margin-left: 20px;
-  }
+.topic-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 
-  .topic-container {
-    display: inline-flex;
-    margin-top: 10px;
-  }
+.topic-title {
+  text-align: start;
+  margin-left: 20px;
+}
 
-  .form-button {
-    border-radius: 25px;
-    border: none;
-    padding: 8px 8px;
-    margin: 0 14px;
-    font-size: 15px;
-    color:#eff7fe;
-    background-color: darkslategray;
-  }
+.form-button {
+  border-radius: 25px;
+  border: none;
+  padding: 8px 8px;
+  margin: 0 14px;
+  font-size: 15px;
+  color: #eff7fe;
+  background-color: darkslategray;
+}
 
-  .article-card-container:after {
-      margin: 0 auto;
-      content: "";
-      width: 60%;
-      display: block;
-      border-bottom: 1px solid darkgray;
-      padding-top: 2px;
-  }
-  
-  .article-card-details {
-    grid-area: article-card-details;
-    font-size: 14px;
-  }
-  
-  .article-interactions {
-    grid-area: article-interactions;
-  }
+.article-card-container:after {
+  margin: 0 auto;
+  content: "";
+  width: 60%;
+  display: block;
+  border-bottom: 1px solid darkgray;
+  padding-top: 2px;
+}
 
-  /* .article_form {
-    display: flex;
-    direction: column;
-  } */
+.article-card-details {
+  grid-area: article-card-details;
+  font-size: 14px;
+}
 
+.article-interactions {
+  grid-area: article-interactions;
+}
+
+.article-form {
+  padding-top:10px;
+  display: flex;
+  direction: column;
+  justify-content: flex-end;
+}

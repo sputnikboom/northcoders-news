@@ -16,14 +16,14 @@ class TopicPage extends Component {
   render() {
     return (
       <>
-      <div className="topic_container">
+      <div className="topic-container">
         <span className="topic-title">{this.props.topic_slug}</span>
         {this.props.userId &&
           !this.state.addArticle && (
             <button className="form-button" onClick={this.toggleInput}>Add Article</button>
           )}
-        {this.state.addArticle && <ArticleAdder userId={this.props.userId} addArticle={this.addArticle} toggleInput={this.toggleInput}/>}
         </div>
+        {this.state.addArticle && <ArticleAdder userId={this.props.userId} addArticle={this.addArticle} toggleInput={this.toggleInput}/>}
         <Articles articles={this.state.articles} />
       </>
     );
