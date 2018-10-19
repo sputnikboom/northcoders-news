@@ -8,7 +8,6 @@
 header {
   background-color: #5f99cf;
   padding-left: 15px;
- 
   text-align: start;
 }
 
@@ -22,17 +21,25 @@ nav {
   padding: 10px;
   background-color: #cee3f8;
   border-bottom: #5f99cf 1px solid;
+  align-items: baseline;
 }
 
-button {
-  cursor: pointer;
+.topic-title{
+  font-weight: bold;
+  margin-left: 8px;
+  font-size: 20px;
 }
+
 
 a {
   text-decoration: none;
   color: #448ffa;
 }
 
+button {
+  cursor: pointer;
+  color: black;
+}
 
 /* Nav bar */
 

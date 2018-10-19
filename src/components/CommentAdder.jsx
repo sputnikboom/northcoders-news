@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'
 
 class CommentAdder extends Component {
     state = {
-        body: ''
+        body: '',
+        inputWarning: false
     }
 
     render(){
         return(
+            <>
+            {this.state.inputWarning && <div>Cannot post an empty comment!</div>}
             <form className="comment-form" onSubmit={this.handleSubmit}>
                 <textarea 
                 className="comment-text"
@@ -16,16 +19,19 @@ class CommentAdder extends Component {
                 value={this.state.body}/>
                 <button className="comment-button">Post Comment</button>
             </form>
+            </>
         )
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
+        if (this.state.body) {
         this.props.addComment(this.state.body)
         this.setState({
-                body: ""
+                body: "",
+                inputWarning: false,
             })
-        
+        } else this.setState({inputWarning: true});
     }
 
     handleChange = (event) => {

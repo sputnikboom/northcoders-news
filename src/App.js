@@ -12,38 +12,50 @@ import Login from "./components/Login";
 import LogOut from "./components/LogOut";
 import NotFound from "./components/NotFound";
 
-
 class App extends Component {
   state = {
-    user: {}
+    user: {},
+    topic: ""
   };
 
   render() {
     return (
       <div className="App">
-       <header><Link className="home-title" to="/">Northcoders news</Link></header>
+        <header>
+          <Link className="home-title" to="/">
+            Northcoders news
+          </Link>
+        </header>
         <nav>
           <SidebarButton />
           {!this.state.user.username ? (
             <Login toggleLogin={this.toggleLogin} />
           ) : (
             <div className="user-login">
-              <button className="nav-button"><Link to={`/users/${this.state.user.username}`}>My Profile</Link></button>
+              <button className="nav-button">
+                <Link to={`/users/${this.state.user.username}`}>
+                  My Profile
+                </Link>
+              </button>
               <LogOut toggleLogin={this.toggleLogin} />
             </div>
           )}
         </nav>
 
         <Router>
-          <Home path="/" />
-          <TopicPage path="/topics/:topic_slug" userId={this.state.user._id} />
-          <UserProfile path="/users/:user_id">
-            <Comments path="comments" />
-            <Articles path="articles" />
-          </UserProfile>
+          <Home path="/" updateTopic={this.updateTopic} />
+          <TopicPage
+            path="/topics/:topic_slug"
+            userId={this.state.user._id}
+            updateTopic={this.updateTopic}
+          />
+          <UserProfile path="/users/:user_id" />
+          <Comments path="comments" />
+          <Articles path="articles" />
           <Article path="/articles/:article_id" userId={this.state.user._id} />
-          <NotFound path="/error"/>
-          <NotFound default/>
+          <NotFound path="/error" />
+          <NotFound default />
+
         </Router>
       </div>
     );
@@ -51,6 +63,12 @@ class App extends Component {
 
   toggleLogin = user => {
     user ? this.setState({ user }) : this.setState({ user: {} });
+  };
+
+  updateTopic = topic => {
+    this.setState({
+      topic
+    });
   };
 }
 

@@ -6,7 +6,8 @@ import "../Article.css";
 
 class Article extends Component {
   state = {
-    article: {}
+    article: {},
+    comments: []
   };
 
   render() {

@@ -7,13 +7,31 @@
       "vote-container title"
       "vote-container article-card-details"
       "vote-container article-interactions";
-    /* border: 2px dotted rgba(255, 255, 0, 1); */
     background-color: white;
   }
 
   /* .article-card-container:hover {
       background-color: #EFF7FF
   } */
+
+  .topic-title {
+    text-align: start;
+    margin-left: 20px;
+  }
+
+  .topic-container {
+    display: inline-flex;
+  }
+
+  .form-button {
+    border-radius: 25px;
+    border: none;
+    padding: 8px 8px;
+    margin: 0 14px;
+    font-size: 15px;
+    color:#eff7fe;
+    background-color: darkslategray;
+  }
 
   .article-card-container:after {
       margin: 0 auto;
@@ -31,5 +49,9 @@
   
   .article-interactions {
     grid-area: article-interactions;
+  }
+
+  .article_form {
+    display: inline-flex;
   }
 
