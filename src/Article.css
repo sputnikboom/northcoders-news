@@ -1,17 +1,32 @@
-.article-body:after {
-  margin: 0 auto;
-  content: "";
-  width: 80%;
-  display: block;
-  border-bottom: 2px lightgrey dotted;
-  padding-top: 12px;
+.article-container {
+  margin: 15px 20%;
+  padding: 15px;
+  border: #e9e9e9 solid 2px;
+  background: #f0f0fc;
+}
+
+.article-header {
+  display: flex;
+}
+
+.article-title {
+  align-self: center;
 }
 
 .article-body {
-  margin-bottom: 20px;
   text-align: left;
-  margin-left: 20%;
-  margin-right: 20%;
+  background: #fafafa;
+  border: #c0bdbe solid 1px;
+  padding: 15px;
+  margin-bottom: 0px;
+}
+
+.body-divider {
+  margin: 0 auto;
+  content: "";
+  width: 60%;
+  display: block;
+  border-bottom: 2px lightgrey dotted;
 }
 
 .comment-button {
@@ -20,7 +35,7 @@
   padding: 8px 8px;
   margin: 0 14px;
   font-size: 15px;
-  color:#eff7fe;
+  color: #eff7fe;
   background-color: darkslategray;
 }
 
@@ -29,7 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 10px 0px;
 }
 
 .comment-text {

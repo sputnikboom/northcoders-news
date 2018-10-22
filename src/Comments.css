@@ -9,7 +9,7 @@
     text-align: left;
     grid-template-columns: 0.5fr 6fr;
     grid-template-rows: 1fr, 3fr;
-    margin: 8px;
+    margin-top: 10px;
  
     grid-template-areas:
     "vote-container comment-details"

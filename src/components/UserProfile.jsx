@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "@reach/router";
 import { getOneById } from "./api/get.js";
 import PropTypes from "prop-types";
 import defaultImg from "../assets/default-user.png";
