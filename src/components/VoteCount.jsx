@@ -5,7 +5,8 @@ import "../VoteCount.css";
 
 class VoteCount extends Component {
   state = {
-    voteMod: 0
+    voteMod: 0,
+    hasVoted: null
   };
 
   render() {
@@ -13,17 +14,15 @@ class VoteCount extends Component {
     return (
       <span className="vote-container">
         <button
-          className="vote-up"
+          className={`vote-up voted-${this.state.hasVoted}`}
           onClick={() => this.changeVote("up")}
-          disabled={voteMod === 1}
         >
           <i className="material-icons">arrow_upward</i>
         </button>
         <div className="vote-score">{this.props.parent.votes + voteMod}</div>
         <button
-          className="vote-down"
+          className={`vote-down voted-${this.state.hasVoted}`}
           onClick={() => this.changeVote("down")}
-          disabled={voteMod === -1}
         >
           <i className="material-icons">arrow_downward</i>
         </button>
@@ -33,9 +32,13 @@ class VoteCount extends Component {
 
   changeVote = direction => {
     const { voteMod } = this.state;
-    let voteChange = direction === "up" ? voteMod + 1 : voteMod - 1;
+    let voteChange = voteMod !== 0 ? 0
+    : direction === "up"
+    ? voteMod + 1 
+    : voteMod + -1
     this.setState({
-      voteMod: voteChange
+      voteMod: voteChange,
+      hasVoted: this.state.hasVoted === direction ? null : direction
     });
     patchVote(this.props.parent._id, this.props.type, direction);
   };

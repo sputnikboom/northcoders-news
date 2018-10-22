@@ -11,11 +11,11 @@
 }
 
 
-.vote-up:disabled {
+.vote-up.voted-up{
     color: #FF8b60;
 }
 
-.vote-down:disabled {
+.vote-down.voted-down{
     color: #9494FF;
 }
 

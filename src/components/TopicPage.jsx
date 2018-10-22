@@ -6,6 +6,7 @@ import ArticleAdder from "./ArticleAdder";
 import { postArticle } from "./api/post";
 import { navigate } from "@reach/router";
 import "../Articles.css"
+import SidebarButton from "./SidebarButton";
 
 class TopicPage extends Component {
   state = {
