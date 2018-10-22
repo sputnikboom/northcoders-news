@@ -12,7 +12,7 @@ class UserProfile extends Component {
     const { user } = this.state;
     return (
       <div>
-        <h2>User Profile</h2>
+        <h2>{user.username}'s Profile</h2>
         <div>{user.username}</div>
         <div>{user.name}</div>
         <img

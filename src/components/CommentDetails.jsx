@@ -34,6 +34,6 @@ export default CommentDetails;
 
 CommentDetails.propTypes = {
   deleteComment: PropTypes.func.isRequired,
-  userId: PropTypes.string.isRequired,
-  comment: PropTypes.object.isRequired
+  comment: PropTypes.object.isRequired,
+  userId: PropTypes.string
 };

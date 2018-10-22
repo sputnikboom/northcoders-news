@@ -18,7 +18,7 @@ export const postComment = (body, userId, articleId) => {
       created_by: userId
     })
     .then(({ data }) => {
-      return data.comment;
+      return data;
     });
 };
 

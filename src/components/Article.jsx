@@ -29,6 +29,7 @@ class Article extends Component {
         </main>
         <div className="body-divider" />
         <Comments
+          id="comments" name="comments"
           comments={this.state.comments}
           userId={this.props.userId}
           article_id={this.props.article_id}
