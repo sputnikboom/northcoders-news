@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import VoteCount from "./VoteCount";
 import PropTypes from "prop-types";
 import { Link } from "@reach/router";
-import { formatDate } from "./utils/index.js";
 import CommentAdder from "./CommentAdder";
 import { getListById } from "./api/get.js";
 import { postComment } from "./api/post.js";
 import { removeComment } from "./api/delete.js";
 import "../Comments.css";
+import moment from'moment'
 
 class Comments extends Component {
   state = {
@@ -35,8 +35,8 @@ class Comments extends Component {
                   {comment.created_by.username}
                 </Link>
                 <span className="comment-time">
-                  <span> posted at </span>
-                  {formatDate(comment.created_at)}
+                  <span> posted </span>
+                  {moment().from(comment.created_at, true)} ago
                 </span>
                 {comment.created_by._id === this.props.userId && (
                   <button className="delete-button" onClick={() => this.deleteComment(comment._id)}>
