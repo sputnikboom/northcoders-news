@@ -5,7 +5,7 @@ import Articles from "./Articles";
 import ArticleAdder from "./ArticleAdder";
 import { postArticle } from "./api/post";
 import { navigate } from "@reach/router";
-import "../Articles.css"
+import "../Articles.css";
 import SidebarButton from "./SidebarButton";
 
 class TopicPage extends Component {
@@ -17,14 +17,22 @@ class TopicPage extends Component {
   render() {
     return (
       <>
-      <div className="topic-container">
-        <span className="topic-title">{this.props.topic_slug}</span>
-        {this.props.userId &&
-          !this.state.addArticle && (
-            <button className="form-button" onClick={this.toggleInput}>Add Article</button>
-          )}
+        <div className="topic-container">
+          <span className="topic-title">{this.props.topic_slug}</span>
+          {this.props.userId &&
+            !this.state.addArticle && (
+              <button className="form-button" onClick={this.toggleInput}>
+                Add Article
+              </button>
+            )}
         </div>
-        {this.state.addArticle && <ArticleAdder userId={this.props.userId} addArticle={this.addArticle} toggleInput={this.toggleInput}/>}
+        {this.state.addArticle && (
+          <ArticleAdder
+            userId={this.props.userId}
+            addArticle={this.addArticle}
+            toggleInput={this.toggleInput}
+          />
+        )}
         <Articles articles={this.state.articles} />
       </>
     );
@@ -50,8 +58,7 @@ class TopicPage extends Component {
 
   addArticle = (body, title) => {
     postArticle(body, title, this.props.userId, this.props.topic_slug).then(
-      newArticle =>
-        navigate(`/articles/${newArticle._id}`)
+      newArticle => navigate(`/articles/${newArticle._id}`)
     );
   };
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { navigate } from "@reach/router";
 
 class ArticleAdder extends Component {
   state = {
@@ -14,27 +15,27 @@ class ArticleAdder extends Component {
         {this.state.inputWarning && (
           <div>New articles must have a title and a body</div>
         )}
-        {this.props.userId &&
-        <form className="article-form" onSubmit={this.handleSubmit}>
-          <label>Title:</label>
-          <input
-            name="title"
-            type="text"
-            onChange={this.handleChange}
-            value={this.state.title}
-          />
-          <label>Article:</label>
-          <textarea
-            name="body"
-            onChange={this.handleChange}
-            value={this.state.body}
-          />
-          <button className="form-button">Add Article</button>
-          <button className="form-button" onClick={this.props.toggleInput}>
-            Cancel
-          </button>
-        </form>
-        }
+        {this.props.userId && (
+          <form className="article-form" onSubmit={this.handleSubmit}>
+            <label>Title:</label>
+            <input
+              name="title"
+              type="text"
+              onChange={this.handleChange}
+              value={this.state.title}
+            />
+            <label>Article:</label>
+            <textarea
+              name="body"
+              onChange={this.handleChange}
+              value={this.state.body}
+            />
+            <button className="form-button">Add Article</button>
+            <button className="form-button" onClick={this.props.toggleInput}>
+              Cancel
+            </button>
+          </form>
+        )}
       </>
     );
   }
@@ -47,7 +48,7 @@ class ArticleAdder extends Component {
         body: "",
         title: "",
         inputWarning: false
-      })
+      });
     } else this.setState({ inputWarning: true });
   };
 
