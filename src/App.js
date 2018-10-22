@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Link, Router } from "@reach/router";
-import SidebarButton from "./components/SidebarButton";
 import Articles from "./components/Articles";
 import UserProfile from "./components/UserProfile";
 import Comments from "./components/Comments";
 import Home from "./components/Home";
 import TopicPage from "./components/TopicPage";
 import Article from "./components/Article";
-import Login from "./components/Login";
-import LogOut from "./components/LogOut";
 import NotFound from "./components/NotFound";
+import Navigation from "./components/Navigation";
 
 class App extends Component {
   state = {
@@ -19,6 +17,7 @@ class App extends Component {
   };
 
   render() {
+    const {user} = this.state;
     return (
       <div className="App">
         <header>
@@ -26,36 +25,23 @@ class App extends Component {
             Northcoders news
           </Link>
         </header>
-        <nav>
-          <SidebarButton />
-          {!this.state.user.username ? (
-            <Login toggleLogin={this.toggleLogin} />
-          ) : (
-            <div className="user-login">
-              <button className="nav-button">
-                <Link to={`/users/${this.state.user.username}`}>
-                  My Profile
-                </Link>
-              </button>
-              <LogOut toggleLogin={this.toggleLogin} />
-            </div>
-          )}
-        </nav>
-
+        <Navigation
+          username={user.username || ""}
+          toggleLogin={this.toggleLogin}
+        />
         <Router>
           <Home path="/" updateTopic={this.updateTopic} />
           <TopicPage
             path="/topics/:topic_slug"
-            userId={this.state.user._id}
+            userId={user._id}
             updateTopic={this.updateTopic}
           />
           <UserProfile path="/users/:user_id" />
           <Comments path="comments" />
           <Articles path="articles" />
-          <Article path="/articles/:article_id" userId={this.state.user._id} />
+          <Article path="/articles/:article_id" userId={user._id} />
           <NotFound path="/error" />
           <NotFound default />
-
         </Router>
       </div>
     );

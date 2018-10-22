@@ -1,8 +1,16 @@
+h3 {
+  margin-bottom: 0px;
+}
+
+.article-list {
+  padding-bottom: 20px;
+}
+
 .article-card-container {
   display: grid;
   text-align: left;
   grid-template-columns: 0.5fr 6fr;
-  grid-template-rows: 3fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr;
   grid-template-areas:
     "vote-container title"
     "vote-container article-card-details"
@@ -18,23 +26,12 @@
 
 .topic-title {
   text-align: start;
-  margin-left: 20px;
 }
 
-.form-button {
-  border-radius: 25px;
-  border: none;
-  padding: 8px 8px;
-  margin: 0 14px;
-  font-size: 15px;
-  color: #eff7fe;
-  background-color: darkslategray;
-}
-
-.article-card-container:after {
+.article-divider {
   margin: 0 auto;
   content: "";
-  width: 60%;
+  width: 90%;
   display: block;
   border-bottom: 1px solid darkgray;
   padding-top: 2px;
@@ -50,8 +47,18 @@
 }
 
 .article-form {
-  padding-top:10px;
+  padding-top: 10px;
   display: flex;
   direction: column;
   justify-content: flex-end;
+}
+
+.form-button {
+  border-radius: 25px;
+  border: none;
+  padding: 8px 8px;
+  margin: 0 14px;
+  font-size: 15px;
+  color: #eff7fe;
+  background-color: darkslategray;
 }
