@@ -49,16 +49,37 @@ h3 {
 
 .article-form {
   display: flex;
-  direction: column;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px;
+  border: #e9e9e9 solid 2px;
+  background: #f0f0fc;
 }
+
+.title-input {
+  margin-bottom: 20px;
+}
+
+.body-input {
+  padding-bottom: 200px;
+  margin-bottom: 20px;
+}
+
+
 
 .form-button {
   border-radius: 25px;
   border: none;
   padding: 8px 8px;
-  margin: 0 14px;
+  margin: 0 50px;
   font-size: 15px;
   color: #eff7fe;
   background-color: darkslategray;
+}
+
+.form-button.submit {
+  margin: 0 100px;
 }

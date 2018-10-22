@@ -9,6 +9,7 @@ import TopicPage from "./components/TopicPage";
 import Article from "./components/Article";
 import NotFound from "./components/NotFound";
 import Navigation from "./components/Navigation";
+import ArticleAdder from "./components/ArticleAdder";
 
 class App extends Component {
   state = {
@@ -40,6 +41,7 @@ class App extends Component {
           <Comments path="comments" />
           <Articles path="articles" />
           <Article path="/articles/:article_id" userId={user._id} />
+          <ArticleAdder path="topics/:topic_slug/new-article" userId={user._id}/>
           <NotFound path="/error" />
           <NotFound default />
         </Router>

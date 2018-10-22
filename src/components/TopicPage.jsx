@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { getArticlesByTopic, postArticle } from "./api/articles.js";
+import { getArticlesByTopic } from "./api/articles.js";
 import Articles from "./Articles";
-import ArticleAdder from "./ArticleAdder";
-import { navigate } from "@reach/router";
+
+import {Link} from '@reach/router';
+
 import "../Articles.css";
 
 class TopicPage extends Component {
@@ -19,18 +20,11 @@ class TopicPage extends Component {
           <span className="topic-title">{this.props.topic_slug}</span>
           {this.props.userId &&
             !this.state.addArticle && (
-              <button className="form-button" onClick={this.toggleInput}>
+              <Link to={`/topics/${this.props.topic_slug}/new-article`} state={{addArticle: this.props.addArticle}}><button className="form-button">
                 Add Article
-              </button>
+              </button></Link>
             )}
         </div>
-        {this.state.addArticle && (
-          <ArticleAdder
-            userId={this.props.userId}
-            addArticle={this.addArticle}
-            toggleInput={this.toggleInput}
-          />
-        )}
         <Articles articles={this.state.articles} />
       </>
     );
@@ -50,16 +44,6 @@ class TopicPage extends Component {
 
   getArticles = topic => {
     getArticlesByTopic(topic).then(articles => this.setState({ articles }));
-  };
-
-  addArticle = (body, title) => {
-    postArticle(body, title, this.props.userId, this.props.topic_slug).then(
-      newArticle => navigate(`/articles/${newArticle._id}`)
-    );
-  };
-
-  toggleInput = event => {
-    this.setState({ addArticle: !this.state.addArticle });
   };
 }
 
