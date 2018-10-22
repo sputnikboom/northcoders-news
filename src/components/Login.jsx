@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getOneById } from "./api/get";
+import { getUserByUsername } from "./api/users.js";
 import PropTypes from "prop-types";
 
 class Login extends Component {
@@ -16,14 +16,14 @@ class Login extends Component {
           value={this.state.username}
           onChange={this.handleChange}
         />{" "}
-        <button className="nav-button" >Log In</button>
+        <button className="nav-button">Log In</button>
       </form>
     );
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    getOneById(this.state.username, "user").then(user =>
+    getUserByUsername(this.state.username).then(user =>
       this.props.toggleLogin(user)
     );
   };

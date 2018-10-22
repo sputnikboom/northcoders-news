@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { navigate } from "@reach/router";
 
 class ArticleAdder extends Component {
   state = {

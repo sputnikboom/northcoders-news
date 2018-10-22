@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Topics from "./Topics";
-import { getAllOfType } from "./api/get";
-import "../Menu.css"
-
+import { getAllTopics } from "./api/topics";
+import "../Menu.css";
 
 class SidebarButton extends Component {
   state = {
@@ -13,7 +12,9 @@ class SidebarButton extends Component {
   render() {
     return (
       <div className="dropdown">
-        <button className="menu-button" onClick={this.showMenu}>Menu</button>
+        <button className="menu-button" onClick={this.showMenu}>
+          Menu
+        </button>
 
         {this.state.showMenu && (
           <div
@@ -22,7 +23,7 @@ class SidebarButton extends Component {
               this.SidebarButton = element;
             }}
           >
-            <Topics topics={this.state.topics} hideMenu={this.hideMenu}/>
+            <Topics topics={this.state.topics} hideMenu={this.hideMenu} />
           </div>
         )}
       </div>
@@ -45,10 +46,9 @@ class SidebarButton extends Component {
     }
   };
 
-  componentDidMount(){
-    getAllOfType("topics").then(topics => this.setState({ topics }))
+  componentDidMount() {
+    getAllTopics().then(topics => this.setState({ topics }));
   }
-
 }
 
 export default SidebarButton;

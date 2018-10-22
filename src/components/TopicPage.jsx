@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { getListById } from "./api/get";
+import { getArticlesByTopic, postArticle } from "./api/articles.js";
 import Articles from "./Articles";
 import ArticleAdder from "./ArticleAdder";
-import { postArticle } from "./api/post";
 import { navigate } from "@reach/router";
 import "../Articles.css";
-import SidebarButton from "./SidebarButton";
 
 class TopicPage extends Component {
   state = {
@@ -51,9 +49,7 @@ class TopicPage extends Component {
   }
 
   getArticles = topic => {
-    getListById(topic, "topic", "articles").then(articles =>
-      this.setState({ articles })
-    );
+    getArticlesByTopic(topic).then(articles => this.setState({ articles }));
   };
 
   addArticle = (body, title) => {

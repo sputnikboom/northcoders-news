@@ -1,12 +1,16 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-
-const LogOut = ({toggleLogin}) => {
-  return <button className="nav-button" onClick={() => toggleLogin()}>Log Out</button> };
+const LogOut = ({ toggleLogin }) => {
+  return (
+    <button className="nav-button" onClick={() => toggleLogin()}>
+      Log Out
+    </button>
+  );
+};
 
 LogOut.propTypes = {
-    toggleLogin: PropTypes.func.isRequired
-}
+  toggleLogin: PropTypes.func.isRequired
+};
 
 export default LogOut;

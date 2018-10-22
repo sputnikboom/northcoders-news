@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import SidebarButton from "./SidebarButton";
 import Login from "./Login";
 import { Link } from "@reach/router";
 import PropTypes from "prop-types";
 import LogOut from "./LogOut";
 
-const Navigation = ({username, toggleLogin}) => {
+const Navigation = ({ username, toggleLogin }) => {
   return (
     <nav>
       <SidebarButton />
@@ -25,7 +25,7 @@ const Navigation = ({username, toggleLogin}) => {
 
 export default Navigation;
 
-SidebarButton.propTypes = {
+Navigation.propTypes = {
   username: PropTypes.string.isRequired,
   toggleLogin: PropTypes.func.isRequired
 };

@@ -8,7 +8,6 @@ const Articles = props => {
   return (
     <main className="article-list">
       {props.articles.map((article, i) => {
-
         return (
           <div key={article._id} className="article-card-container">
             <VoteCount parent={article} type={"article"} />
@@ -18,7 +17,6 @@ const Articles = props => {
             )}
           </div>
         );
-        
       })}
     </main>
   );

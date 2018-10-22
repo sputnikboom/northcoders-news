@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import VoteCount from "./VoteCount";
 import PropTypes from "prop-types";
 import CommentAdder from "./CommentAdder";
-import { getListById } from "./api/get.js";
-import { postComment } from "./api/post.js";
-import { removeComment } from "./api/delete.js";
+import {
+  getCommentsByArticle,
+  postComment,
+  removeComment
+} from "./api/comments.js";
 import "../Comments.css";
 import CommentDetails from "./CommentDetails";
 
@@ -37,7 +39,7 @@ class Comments extends Component {
   }
 
   componentDidMount() {
-    getListById(this.props.article_id, "article", "comments").then(comments => {
+    getCommentsByArticle(this.props.article_id).then(comments => {
       this.setState({
         comments
       });

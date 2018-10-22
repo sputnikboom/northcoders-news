@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { patchVote } from "./api/patch";
+import { patchArticleVote } from "./api/articles.js";
+import { patchCommentVote } from "./api/comments.js"
 import "../VoteCount.css";
 
 class VoteCount extends Component {
@@ -40,7 +41,9 @@ class VoteCount extends Component {
       voteMod: voteChange,
       hasVoted: this.state.hasVoted === direction ? null : direction
     });
-    patchVote(this.props.parent._id, this.props.type, direction);
+    this.props.type === "comment"
+    ? patchCommentVote(this.props.parent._id, direction)
+    : patchArticleVote(this.props.parent._id, direction);
   };
 }
 
