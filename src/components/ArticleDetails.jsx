@@ -25,7 +25,7 @@ const ArticleDetails = props => {
         <Link to={`/topics/${belongs_to}`}>{belongs_to}</Link>
         <span> {moment().from(created_at, true)} ago</span>
       </div>
-      <Link to={`/articles/${_id}#comments`}className="article-interactions">{`${comment_count} Comments`}</Link>
+      <span className="article-interactions"><Link to={`/articles/${_id}`}>{`${comment_count} Comments`}</Link></span>
     </>
   );
 };
